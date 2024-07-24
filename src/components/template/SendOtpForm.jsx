@@ -1,6 +1,6 @@
-import { sendOtp } from "../../services/Auth";
+import { sendOtp } from "src/services/Auth";
 
-import styles from "./sendOtpForm.module.css";
+import styles from "src/components/template/sendOtpForm.module.css";
 
 function SendOtpForm({mobile, setMobile,setStep}) {
 

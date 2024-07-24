@@ -1,5 +1,7 @@
-import { checkOtp } from "../../services/Auth";
-import styles from "./checkOtpForm.module.css";
+import { checkOtp } from "src/services/Auth";
+import { setCookie } from "src/utils/cookie";
+
+import styles from "src/components/template/CheckOtpForm.module.css"
 
 function CheckOtpForm({ code, setCode, setStep, mobile }) {
   
@@ -11,7 +13,7 @@ function CheckOtpForm({ code, setCode, setStep, mobile }) {
     const { response, error } = await checkOtp(mobile,code);
     
     if (response) {
-    console.log(response);
+    setCookie(response.data);
     }
     if (error) console.log(error.message);
   };
